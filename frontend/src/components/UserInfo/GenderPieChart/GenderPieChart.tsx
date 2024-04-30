@@ -1,5 +1,8 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import userService from '../../../services/userService';
+import { useEffect } from 'react';
+
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 const data = {
   labels: ['Male', 'Female'],
@@ -24,6 +27,19 @@ const options = {
 };
 
 function GenderPieChart() {
+  useEffect(() => {
+    const fetchNumberMaleFemale = async () => {
+      try {
+        await userService.getNumberMaleFemale();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchNumberMaleFemale();
+    return () => {};
+  }, []);
+
   return (
     <>
       <Pie data={data} options={options} />
