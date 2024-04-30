@@ -1,12 +1,11 @@
 /* Primary color */
 :root {
-    --background-color:  #f7f2f2;
+    --background-color:  #f2f5f7;
   }
 
 /* Text colors */
 :root {
-  --text-light: #ffffff;
-  --text-dark: rgb(59, 64, 85);
+  --text-color: rgb(68, 74, 100);
 }
 
 /* Background color */

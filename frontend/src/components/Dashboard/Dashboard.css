@@ -1,0 +1,6 @@
+.user-info{
+    justify-content: center;
+    margin-top: 40px;
+    flex-direction: row;
+    gap: 80px;
+}
