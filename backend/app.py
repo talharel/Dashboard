@@ -1,19 +1,19 @@
-from flask import Flask,jsonify
-from flask_cors import CORS
+from flask import Flask,jsonify,make_response
+from flask_sqlalchemy import SQLAlchemy
+from os import environ
 
-app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+db = SQLAlchemy()
 
-@app.route("/")
-def hello():
-    return "wwww"
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DB_URL')
+    db.init_app(app)
 
-@app.route('/api/users', methods=['GET'])
-def get_number_male_female():
-    male_count = 60
-    female_count = 40
-    
-    return jsonify({'male': male_count, 'female': female_count})
+    with app.app_context():
+        db.create_all()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    @app.route('/working',methods=['GET'])
+    def test():
+        return make_response(jsonify({'message':'working'}))
+
+    return app
