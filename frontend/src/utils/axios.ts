@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {backendUrl} from '../utils/constants'
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: backendUrl,
 });
 
 export default apiClient;
