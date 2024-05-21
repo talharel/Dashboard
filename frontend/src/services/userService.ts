@@ -1,14 +1,10 @@
 import apiClient from '../utils/axios';
 
 const userService = {
-  async getNumberMaleFemale() {
+  async getGender() {
     try {
-      const response = await apiClient.get(
-        `http://localhost:5000/api/users`,
-        {}
-      );
-      const { male: mal,female:f } = response.data;
-      console.log(mal,f);
+      const response = await apiClient.get('/users/gender', {});
+      return response.data;
     } catch (error) {
       throw error;
     }
