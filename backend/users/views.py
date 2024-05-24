@@ -18,7 +18,8 @@ def get_gender(request):
         return Response({'error': 'An error occurred while fetching gender data'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
-def get_groups_of_ages(request, gap=20):
+def get_groups_of_ages(request):
+    gap = request.GET.get('gap', 20)
     try:
         gap = int(gap)
         if gap <= 0:

@@ -10,9 +10,9 @@ const userService = {
     }
   },
 
-  async getAges() {
+  async getAges(gap: number) {
     try {
-      const response = await apiClient.get('/users/ages', {});
+      const response = await apiClient.get('/users/ages', { params: { gap } });
       const data = response.data;
       const ages = Object.keys(data);
       const counts = Object.values(data);

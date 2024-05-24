@@ -1,4 +1,4 @@
-import { Button, Card, Grid, Input, Typography } from '@mui/material';
+import { Card, Grid, Typography } from '@mui/material';
 import './UserInfo.css';
 import { AgeBarChart } from '../AgeBarChart/AgeBarChart';
 import GenderPieChart from '../GenderPieChart/GenderPieChart';
@@ -12,13 +12,19 @@ function UserInfo() {
             User Analytics
           </Typography>
         </Grid>
-        <Grid item xs={3}>
-          <Card sx={{ borderRadius: 2, width: 420 }} elevation={20}>
+        <Grid item xl={3}>
+          <Card
+            sx={{ borderRadius: 2, width: 420, height: 460 }}
+            elevation={20}
+          >
             <GenderPieChart />
           </Card>
         </Grid>
-        <Grid item xs={3}>
-          <Card sx={{ borderRadius: 2, width: 420 }} elevation={20}>
+        <Grid item xl={3}>
+          <Card
+            sx={{ borderRadius: 2, width: 420, height: 460 }}
+            elevation={20}
+          >
             <AgeBarChart />
           </Card>
         </Grid>
