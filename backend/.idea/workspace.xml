@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce9d6220-9b49-4602-b370-b62f4496bc50" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/users/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/UserInfo/GenderPieChart/GenderPieChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/UserInfo/GenderPieChart/GenderPieChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/userService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/axios.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/utils.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +34,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/display__data"
+    "git-widget-placeholder": "feature/add__filter__to__ages",
+    "last_opened_file_path": "C:/Python/FastApi"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
