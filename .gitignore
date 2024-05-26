@@ -6,6 +6,12 @@ __pycache__
 # Frontend
 node_modules
 
+
+# tests
+playwright-report
+test-results
+
+
 # 
 .env
 
