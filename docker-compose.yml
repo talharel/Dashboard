@@ -1,5 +1,7 @@
 version: '3.0'
+
 services:
+
   backend:
     build: ./backend
     container_name: dashboard_backend
@@ -8,7 +10,9 @@ services:
       - 8000:8000
     depends_on:
       - db
+
   frontend:
+
     build: ./frontend
     container_name: dashboard_frontend
     image: dashboard_frontend
@@ -16,6 +20,7 @@ services:
       - 5173:5173
     depends_on:
       - backend
+
   db:
     container_name: dashboard_db
     image: postgres:14
@@ -28,6 +33,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_HOST_AUTH_METHOD: trust
+      
 
 volumes:
   postgres_data:

@@ -25,7 +25,6 @@ export function AgeBarChart() {
   const [ages, setAge] = useState<string[]>([]);
   const [agesCount, setAgesCount] = useState<number[]>([]);
   const [gap, setGap] = useState<number>(20);
-  // const [gap, setGap] = useState<string>('20');
 
   useEffect(() => {
     const getAgesData = async () => {
