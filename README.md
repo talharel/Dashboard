@@ -1,8 +1,9 @@
 # Analysis Dashboard
 This is a full-stack project for an Analysis Dashboard.
 The project uses React for the frontend, Django for the backend, PostgreSQL as the database,
-Playwright for testing, Mock Service Worker for mocking the backend during development and tests, and GitHub Actions for CI.
-The application is containerized using Docker and Docker Compose.
+Playwright for testing, Mock Service Worker for mocking the backend during development and tests,
+and GitHub Actions for CI, The application is containerized using Docker and Docker Compose.
+
 
 ## Table of Contents
 
@@ -29,11 +30,16 @@ docker-compose up --build
 ```
 
 
-## Backend Setup
+### Backend Setup
 ```sh
 docker-compose exec backend python manage.py migrate
-docker-compose exec backend python manage.py makemigrations
 ```
+
+### Populating the Database
+```sh
+docker-compose exec backend python populate.py
+```
+
 
 
 
