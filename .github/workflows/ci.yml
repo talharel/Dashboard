@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Install Frontend Dependencies
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Check Audit Report Severity
+        run: npm audit --audit-level=high
+        working-directory: ./frontend
+
+      - name: Install Playwright Dependencies
+        run: |
+          npx playwright install
+          npx playwright install-deps
+        working-directory: ./frontend
+
+      
+      - name: Run Playwright Test
+        env:
+          VITE_MOCKING_ENABLED: 1
+          FRONTEND_URL: http://localhost:5173
+          BACKEND_URL: http://localhost:8000
+        run: npx playwright test -c playwright.config.ts
+        working-directory: ./frontend
+
+
+      - name: Upload Test Videos Of Failed Tests
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: playwright-failed-test-videos
+          path: ./frontend/test-results/**/video.webm

@@ -7,11 +7,12 @@ function UserInfo() {
   return (
     <>
       <Grid className='user-info' container>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Typography variant='h4' className='user-info-title'>
             User Analytics
           </Typography>
-        </Grid>
+        </Grid> */}
+        
         <Grid item xl={3}>
           <Card
             sx={{ borderRadius: 2, width: 420, height: 460 }}

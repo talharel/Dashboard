@@ -18,10 +18,18 @@ def create_task(request):
 
 @api_view(['GET'])
 def get_tasks(request):
+    completed_tasks = Task.objects.filter(status='complete')
+    uncompleted_tasks = Task.objects.filter(status='uncompleted')
     tasks = Task.objects.all()
     if tasks.exists():
         serializer = TaskSerializer(tasks, many=True)
-        return Response(serializer.data,status=status.HTTP_200_OK)
+        response_data = {
+                'count': tasks.count(),
+                'completed_tasks_size': completed_tasks.count(),
+                'uncompleted_tasks_size': uncompleted_tasks.count(),
+                'tasks': serializer.data
+            }
+        return Response(response_data,status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
 

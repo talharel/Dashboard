@@ -25,10 +25,14 @@ def get_employees(request):
         employees = Employee.objects.all()
         if employees.exists():
             serializer = EmployeeSerializer(employees, many=True)
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+            response_data = {
+                'count': employees.count(),
+                'employees': serializer.data
+            }
+            return Response(response_data,status.HTTP_200_OK)
+        return Response({'error': 'No employees found'}, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:
-        return Response({'error':str(e)},status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 

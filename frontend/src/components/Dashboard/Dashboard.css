@@ -2,5 +2,15 @@
     justify-content: center;
     margin-top: 40px;
     flex-direction: row;
+    gap: 200px;
+    margin-bottom: 200px;
+}
+
+
+.task-employee-info{
+    justify-content: center;
+    margin-top: 80px;
+    flex-direction: row;
     gap: 80px;
+    margin-bottom: 100px;
 }

@@ -1,14 +1,13 @@
-import { Grid } from '@mui/material';
 import DashboardHeader from '../DashboardHeader/DashboardHeader';
+import TaskEmployeeInfo from '../TaskEmployeeInfo/TaskEmployeeInfo/TaskEmployeeInfo';
 import UserInfo from '../UserInfo/UserInfo/UserInfo';
 import './Dashboard.css';
 
 function Dashboard() {
   return (
     <>
-      <Grid container spacing={2}>
-        <DashboardHeader />
-      </Grid>
+      <DashboardHeader />
+      <TaskEmployeeInfo />
       <UserInfo />
     </>
   );
