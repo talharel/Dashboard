@@ -13,7 +13,7 @@ def get_gender(request):
             'male': male_count,
             'female': female_count
         }
-        return Response(gender_data)
+        return Response(gender_data,status=status.HTTP_200_OK)
     except Exception as e:
         return Response({'error': 'An error occurred while fetching gender data'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -34,7 +34,7 @@ def get_groups_of_ages(request):
             count = UserProfile.objects.filter(age__gte=start_age, age__lt=end_age).count()
             age_groups[f"{start_age}-{end_age}"] = count
 
-        return Response(age_groups)
+        return Response(age_groups,status=status.HTTP_200_OK)
     
     except Exception as e:
         return Response({'error': 'An error occurred while fetching gender data'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

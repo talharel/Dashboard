@@ -1,4 +1,4 @@
-import { Card, Grid, Typography } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import './UserInfo.css';
 import { AgeBarChart } from '../AgeBarChart/AgeBarChart';
 import GenderPieChart from '../GenderPieChart/GenderPieChart';
