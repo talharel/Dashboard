@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { HttpResponse, http } from 'msw';
 
 export const handlers = [
