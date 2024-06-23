@@ -128,10 +128,15 @@ if Task.objects.count() == 0:
         assigned_employees = random.sample(list(Employee.objects.all()), random.randint(1, 5))
         creation_date = fake.date_between(start_date='-1y', end_date='today')
 
+        status = random.choice(['complete', 'uncompleted'])
+        project_manager = random.choice(assigned_employees)
+
         task = Task.objects.create(
             title=title,
             description=description,
-            creation_date=creation_date
+            creation_date=creation_date,
+            status=status,
+            project_manager=project_manager
         )
         task.employees.set(assigned_employees)
         task.save()

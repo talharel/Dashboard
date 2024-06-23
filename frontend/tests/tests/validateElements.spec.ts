@@ -14,15 +14,12 @@ test.describe('Elements validation', () => {
     await page.goto('/');
   });
 
-  test('Check titles and visibilities', async ({ page }) => {
+  test('Check Dashboard title and visibilities', async ({ page }) => {
     await actions.checkVisibliyAndValue(
       dashboardPage.dashboardTitle,
       'DASHBOARD'
     );
 
-    await actions.checkVisibliyAndValue(
-      dashboardPage.userInfoTitle,
-      'User Analytics'
-    );
+    await actions.checkVisibliyAndCount(dashboardPage.ministatisticCards, 4);
   });
 });
