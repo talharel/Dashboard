@@ -3,6 +3,18 @@ This is a full-stack project for an Analysis Dashboard.
 The project uses React for the frontend, Django for the backend, PostgreSQL as the database,
 Playwright for testing, Mock Service Worker for mocking the backend during development and tests,
 and GitHub Actions for CI, The application is containerized using Docker and Docker Compose.
+Celery is also implemented in the project to handle asynchronous tasks and background processing.
+
+
+## Technologies
+- Frontend: React
+- Backend: Django
+- Database: PostgreSQL
+- Testing: Playwright
+- Mocking: Mock Service Worker
+- CI: GitHub Actions
+- Containerization: Docker and Docker Compose
+- Task Queue: Celery
 
 
 ## Table of Contents
