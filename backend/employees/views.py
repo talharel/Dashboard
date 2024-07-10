@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializer import EmployeeSerializer
 from .models import Employee
+from .tasks import my_task
 
 
 
@@ -55,3 +56,10 @@ def delete_employee_by_id(request, id):
         return Response({'message': 'Employee deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
     except Employee.DoesNotExist:
         return Response({'error': 'Employee not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def celery_func(request):
+    a = my_task.delay()
+    print(a.get())
+    return Response({'message':'wwww'})
