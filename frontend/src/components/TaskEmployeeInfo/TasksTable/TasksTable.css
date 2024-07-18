@@ -1,0 +1,39 @@
+.tasks-table-box {
+    margin-left: 280px;
+    max-height: 140px;
+    width: 1140px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    color:  var(--text-color);
+
+  }
+  
+  .tasks-table-cell {
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  
+  .tasks-cell {
+    padding: 8px;
+  }
+  
+  .cell-complete {
+    color: green;
+  }
+  
+  .cell-incomplete {
+    color: orange;
+  }
+  

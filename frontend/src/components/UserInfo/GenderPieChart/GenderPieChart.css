@@ -1,0 +1,9 @@
+.ratio-chart{
+    margin-top: 60px;
+}
+
+
+.ratio-chart-title{
+    color:  var(--text-color);
+    font-size: 40px;
+}

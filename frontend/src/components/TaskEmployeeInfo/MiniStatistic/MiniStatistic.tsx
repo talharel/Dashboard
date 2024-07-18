@@ -1,8 +1,9 @@
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import GroupIcon from '@mui/icons-material/Group';
 import DoneIcon from '@mui/icons-material/Done';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import './MiniStatistic.css';
 
 function MiniStatistic({ title, value }: { title: string; value: string }) {
   let iconComponent;
@@ -30,25 +31,19 @@ function MiniStatistic({ title, value }: { title: string; value: string }) {
   }
 
   return (
-    <Card sx={{ width: 220 }} variant='outlined' className='ministatistic'>
-      <CardContent>
-        <Box mt={2} display='flex' justifyContent='center'>
-          <Box style={{ color: iconColor }}>{iconComponent}</Box>
-        </Box>
-        <Box display='flex' alignItems='center' justifyContent='center'>
-          <Typography variant='h6' color='textSecondary' gutterBottom>
-            {title}
-          </Typography>
-        </Box>
+    <div className='ministatistic'>
+      <Box mt={1} display='flex' justifyContent='center'>
+        <Box style={{ color: iconColor }}>{iconComponent}</Box>
+      </Box>
+      <div className='ministatistic-title'>
+        <p className='ministatistic-text'>{title}</p>
         <hr />
+      </div>
 
-        <Box display='flex' alignItems='center' justifyContent='center'>
-          <Typography variant='h5' component='div'>
-            {value}
-          </Typography>
-        </Box>
-      </CardContent>
-    </Card>
+      <div className='ministatistic-text'>
+        <p>{value}</p>
+      </div>
+    </div>
   );
 }
 

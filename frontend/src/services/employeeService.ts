@@ -4,6 +4,7 @@ const employeeService = {
   async getEmployeesSize() {
     try {
       const response = await apiClient.get('/employees/', {});
+      
       return response.data.count;
     } catch (error) {
       throw error;

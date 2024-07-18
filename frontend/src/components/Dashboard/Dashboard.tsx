@@ -1,14 +1,16 @@
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
+import Sidebar from '../Sidebar/Sidebar';
 import TaskEmployeeInfo from '../TaskEmployeeInfo/TaskEmployeeInfo/TaskEmployeeInfo';
+import TasksTable from '../TaskEmployeeInfo/TasksTable/TasksTable';
 import UserInfo from '../UserInfo/UserInfo/UserInfo';
-import './Dashboard.css';
+
 
 function Dashboard() {
   return (
     <>
-      <DashboardHeader />
       <TaskEmployeeInfo />
+      <TasksTable />
       <UserInfo />
+      <Sidebar />
     </>
   );
 }
