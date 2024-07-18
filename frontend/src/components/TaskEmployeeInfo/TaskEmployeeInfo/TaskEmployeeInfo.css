@@ -1,8 +1,6 @@
 .task-employee-info{
-  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 220px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -14,9 +12,3 @@
     text-align: center;
   }
   
-
-  @media (max-width: 1500px) {
-    .task-employee-info {   
-      flex-direction: column;
-    }
-  }

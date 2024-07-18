@@ -28,7 +28,7 @@ function TaskEmployeeInfo() {
     const getTasksData = async () => {
       try {
         const response = await taskService.getTasks();
-      
+
         setTaskSize(response.count);
         setCompletedTaskSize(response.completed_tasks_size);
         setUnCompletedTaskSize(response.uncompleted_tasks_size);

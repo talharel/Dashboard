@@ -1,0 +1,21 @@
+
+.sidebar-col{
+  max-height: 100%;
+}
+
+
+
+@media (max-width: 1700px) {
+  .sidebar-col {
+  background-color: rgba(154, 179, 192, 0.16);
+    
+  }    
+}
+
+
+@media (max-width: 1400px) {
+    .sidebar-col {
+      display: none;
+    }    
+  }
+

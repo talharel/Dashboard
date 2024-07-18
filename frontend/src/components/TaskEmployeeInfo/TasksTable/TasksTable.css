@@ -1,7 +1,8 @@
 .tasks-table-box {
-    margin-left: 280px;
+    justify-content: center;
     max-height: 140px;
-    width: 1140px;
+    margin-top: 28px;
+    max-width: 90%;
     overflow-y: scroll;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -14,7 +15,6 @@
     width: 100%;
     border-collapse: collapse;
     color:  var(--text-color);
-
   }
   
   .tasks-table-cell {

@@ -6,15 +6,14 @@ function Sidebar() {
     <div className='sidebar'>
       <div className='sidebar-content'>
         <img className='logo' src={logo} alt='Logo' />
-        
 
         <div className='sidebar-buttons'>
-          <button>Task</button>
-          <button>Employee</button>        
+          <button>Code</button>
+          <button>Add Task</button>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;

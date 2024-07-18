@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import { mocking_enabled } from './utils/constants.ts';
