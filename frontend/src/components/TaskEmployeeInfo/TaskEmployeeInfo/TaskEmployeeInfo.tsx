@@ -1,4 +1,3 @@
-import { Grid, Typography } from '@mui/material';
 import './TaskEmployeeInfo.css';
 import MiniStatisticCard from '../MiniStatistic/MiniStatistic';
 import { useEffect, useState } from 'react';
@@ -28,7 +27,8 @@ function TaskEmployeeInfo() {
   useEffect(() => {
     const getTasksData = async () => {
       try {
-        const response = await taskService.getTasksSize();
+        const response = await taskService.getTasks();
+      
         setTaskSize(response.count);
         setCompletedTaskSize(response.completed_tasks_size);
         setUnCompletedTaskSize(response.uncompleted_tasks_size);
@@ -43,7 +43,7 @@ function TaskEmployeeInfo() {
 
   return (
     <>
-      <Grid className='task-employee-info' container>
+      <div className='task-employee-info'>
         <MiniStatisticCard title='Employees' value={employeeSize} />
         <MiniStatisticCard title='Completed Tasks' value={completedTaskSize} />
         <MiniStatisticCard
@@ -51,7 +51,7 @@ function TaskEmployeeInfo() {
           value={unCompletedTaskSize}
         />
         <MiniStatisticCard title='Total Tasks' value={taskSize} />
-      </Grid>
+      </div>
     </>
   );
 }

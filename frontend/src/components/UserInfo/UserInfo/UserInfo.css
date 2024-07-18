@@ -1,5 +1,30 @@
+.user-info{
+   display: flex; 
+   flex-direction: row;
+   gap: 80px;
+}
+
 .user-info-title{
   color:  var(--text-color);
   text-align: center;
 }
+
+
+
+@media (max-width: 2000px) {
+  .user-info {
+      margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,30 +1,14 @@
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { BarChart } from '@mui/x-charts/BarChart';
 import userService from '../../../services/userService';
-import { Box, Slider } from '@mui/material';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import { Slider } from '@mui/material';
+import './AgeBarChart.css';
 
 export function AgeBarChart() {
   const [ages, setAge] = useState<string[]>([]);
   const [agesCount, setAgesCount] = useState<number[]>([]);
   const [gap, setGap] = useState<number>(20);
+  const [chartWidth, setChartWidth] = useState<number>(700);
 
   useEffect(() => {
     const getAgesData = async () => {
@@ -40,40 +24,36 @@ export function AgeBarChart() {
     getAgesData();
   }, [gap]);
 
-  const data = {
-    labels: ages,
-    datasets: [
-      {
-        label: 'Number of users',
-        data: agesCount,
-        backgroundColor: 'rgba(100, 144, 204, 0.6)',
-      },
-    ],
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
 
-  const options = {
-    responsive: true,
-    animation: {
-      duration: 0,
-    },
-    plugins: {
-      title: {
-        display: true,
-        text: 'Age Distribution',
-      },
-    },
-  };
+      if (screenWidth > 1700) {
+        setChartWidth(1000);
+      }
+    };
+    handleResize();
+  });
 
   function handleGap(event: React.ChangeEvent<HTMLInputElement>) {
     setGap(Number.parseInt(event.target.value));
   }
 
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-    >
-      <Bar height={300} data={data} options={options} />
-      <Box alignItems='center' width={400}>
+    <div className='ages-chart'>
+      <BarChart
+        xAxis={[{ scaleType: 'band', data: ages }]}
+        series={[
+          {
+            data: agesCount,
+            label: 'Number of users',
+            color:'rgba(19, 49, 210, 0.4)'
+          },
+        ]}
+        width={chartWidth}
+        height={300}
+      />
+      <div className='slider'>
         <Slider
           onChange={(e: any) => handleGap(e)}
           aria-label='Temperature'
@@ -85,7 +65,7 @@ export function AgeBarChart() {
           min={10}
           max={40}
         />
-      </Box>
+      </div>
     </div>
   );
 }

@@ -1,35 +1,11 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
 import userService from '../../../services/userService';
 import { useState, useEffect } from 'react';
-
-ChartJS.register(ArcElement, Tooltip, Legend, Title);
+import { PieChart } from '@mui/x-charts/PieChart';
+import './GenderPieChart.css';
 
 function GenderPieChart() {
   const [maleNumber, setMaleNumber] = useState(0);
   const [femaleNumber, setFemaleNumber] = useState(0);
-
-  const data = {
-    labels: ['Male', 'Female'],
-    datasets: [
-      {
-        data: [maleNumber, femaleNumber],
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-        borderWidth: 2,
-      },
-    ],
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Gender Ratio',
-      },
-    },
-  };
 
   useEffect(() => {
     const getGenderData = async () => {
@@ -48,7 +24,24 @@ function GenderPieChart() {
 
   return (
     <>
-      <Pie data={data} options={options} />
+      <div className='ratio-chart'>
+        {/* <p className='ratio-chart-title'>Male Female Ratio Chart</p> */}
+        <PieChart
+  
+          series={[
+            {
+              data: [
+                { id: 0, value: maleNumber,color:'rgba(18, 171, 4, 0.4)', label: 'males' },
+                { id: 1, value: femaleNumber,color:'rgba(195, 0, 221, 0.4)' ,label: 'females' },
+              ],
+            },
+            
+          ]}
+          width={400}
+          height={200}
+      
+        />
+      </div>
     </>
   );
 }
