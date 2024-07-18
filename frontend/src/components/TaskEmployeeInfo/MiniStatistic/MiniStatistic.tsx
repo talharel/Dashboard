@@ -32,9 +32,7 @@ function MiniStatistic({ title, value }: { title: string; value: string }) {
 
   return (
     <div className='ministatistic'>
-      <Box mt={1} display='flex' justifyContent='center'>
-        <Box style={{ color: iconColor }}>{iconComponent}</Box>
-      </Box>
+      <Box style={{ color: iconColor }}>{iconComponent}</Box>
       <div className='ministatistic-title'>
         <p className='ministatistic-text'>{title}</p>
         <hr />

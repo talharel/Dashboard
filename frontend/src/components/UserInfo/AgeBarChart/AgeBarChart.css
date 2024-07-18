@@ -2,21 +2,3 @@
     color:  var(--text-color);
     font-size: 40px;
 }
-
-
-
-
-
-    @media (max-width: 2000px) {
-        .ages-chart {
-            margin-left: 300px;
-        }
-    }
-
-
-
-    @media (max-width: 1700px) {
-    .ages-chart {
-        margin-left: 280px;
-        }
-    }
