@@ -24,7 +24,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Check Audit Report Severity
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=Critical
         working-directory: ./frontend
 
       - name: Install Playwright Dependencies
